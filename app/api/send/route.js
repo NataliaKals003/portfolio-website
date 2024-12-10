@@ -16,12 +16,11 @@ export async function POST(req) {
       <p>${message}</p>
     `;
 
-    // Envie o e-mail usando o Resend
     const data = await resend.emails.send({
       from: fromEmail,
       to: ["nataliakals03@gmail.com", email],
       subject: subject,
-      html: htmlContent, // Envie o conteúdo HTML
+      html: htmlContent,
     });
 
     return NextResponse.json({ success: true, data });
@@ -30,4 +29,3 @@ export async function POST(req) {
     return NextResponse.json({ error: error.message });
   }
 }
-
