@@ -27,7 +27,10 @@ const SkillsSection = () => {
   }, [hasScrolled]);
 
   return (
-    <section className="flex flex-col items-center justify-center h-full w-full text-center text-2xl lg:text-3xl text-white px-4 sm:px-8 lg:px-16">
+    <section
+      id="skills"
+      className="flex flex-col items-center justify-center h-full w-full text-center text-2xl lg:text-3xl text-white px-4 sm:px-8 lg:px-16"
+    >
       <div className="pt-32 pb-10 sm:pt-32 sm:pb-16 sm:mt-6">
         <h3 className="uppercase tracking-[20px] text-black dark:text-white">
           SKILLS

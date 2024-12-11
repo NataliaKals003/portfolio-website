@@ -2,7 +2,10 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <section className="flex flex-col items-center justify-center h-full w-full text-center text-2xl lg:text-3xl text-white px-4 sm:px-8 lg:px-16">
+    <section
+      id="about"
+      className="flex flex-col items-center justify-center h-full w-full text-center text-2xl lg:text-3xl text-white px-4 sm:px-8 lg:px-16"
+    >
       <div className="pt-32 pb-6 sm:pt-27 sm:pb-6 sm:mt-6">
         <h3 className="uppercase tracking-[20px]  text-black dark:text-white">
           ABOUT

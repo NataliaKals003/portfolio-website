@@ -11,7 +11,8 @@ const projectsData = [
     description:
       "A timer developed in JavaScript with dark/light mode and background music.",
     image: "/images/projects/focusTimer.png",
-    gitUrl: "https://github.com/NataliaKals003/FocusTimer",
+    gitUrl: "https://github.com/NataliaKals003/FocusTimer-2.0",
+    previewUrl: "https://focus-timer-gray.vercel.app/",
   },
   {
     id: 2,
@@ -74,10 +75,10 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-2xl lg:text-4xl sm:pb-16 mt-32 mb-2 sm:pt-32 pb-10 sm:mt-6 uppercase tracking-[20px] text-black dark:text-white">
-        My Projects
+      <h2 className="text-center text-2xl lg:text-3xl pt-32 mb-10 sm:mt-32 sm:mb-16 uppercase tracking-[20px] text-black dark:text-white">
+        Projects
       </h2>
-      <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul className="grid md:grid-cols-3 gap-16 md:gap-12">
         {projectsData.map((project, index) => (
           <motion.li
             key={project.id}

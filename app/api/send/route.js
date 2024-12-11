@@ -1,33 +1,31 @@
-import nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
-const fromEmail = process.env.EMAIL_USER;
+const resend = new Resend(process.env.RESEND_API_KEY);
+const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req) {
-  try {
-    const { name, email, message } = await req.json();
+  const { email, subject, message } = await req.json();
+  console.log(email, subject, message);
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: fromEmail,
-        pass: process.env.EMAIL_PASS,
-      },
+  try {
+    const htmlContent = `
+      <h1>${subject}</h1>
+      <p>Thank you for contacting us!</p>
+      <p>New message submitted:</p>
+      <p>${message}</p>
+    `;
+
+    const data = await resend.emails.send({
+      from: fromEmail,
+      to: ["nataliakals03@gmail.com", email],
+      subject: subject,
+      html: htmlContent,
     });
 
-    const mailOptions = {
-      from: email,
-      to: [fromEmail, email],
-      subject: `Message from ${name}`,
-      text: message,
-    };
-
-    await transporter.sendMail(mailOptions);
-
-    return new Response("Email sent successfully!", { status: 200 });
+    return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error("Error sending email:", error);
-    return new Response("An error occurred. Please try again.", {
-      status: 500,
-    });
+    return NextResponse.json({ error: error.message });
   }
 }

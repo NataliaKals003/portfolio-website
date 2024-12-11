@@ -37,13 +37,13 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 my-12 py-24 gap-4 relative"
+      className="grid md:grid-cols-2 my-12 py-24 gap-4 relative min-h-screen items-center justify-center"
     >
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
+        <h5 className="text-xl font-bold text-black dark:text-white my-2">
           Let&apos;s Connect
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="text-black dark:text-[#ADB7BE] mb-4 max-w-md">
           I&apos;m currently looking for new opportunities. My inbox is always
           open. Whether you have a question or just want to say hi, I&apos;ll
           try my best to get back to you!
@@ -68,7 +68,7 @@ const EmailSection = () => {
                 type="text"
                 id="name"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-gray-900 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Jacob"
                 value={formData.name}
                 onChange={handleChange}
@@ -86,7 +86,7 @@ const EmailSection = () => {
                 type="email"
                 id="email"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-gray-900 text-sm rounded-lg block w-full p-2.5"
                 placeholder="jacob@google.com"
                 value={formData.email}
                 onChange={handleChange}
@@ -102,7 +102,7 @@ const EmailSection = () => {
               <textarea
                 name="message"
                 id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-gray-900 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Let's talk about..."
                 rows="4"
                 value={formData.message}
@@ -112,7 +112,7 @@ const EmailSection = () => {
             </div>
             <button
               type="submit"
-              className="bg-purple-500 hover:bg-purple-600 text-white font-normal py-2.5 px-5 rounded-lg w-full"
+              className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500  text-white font-normal py-2.5 px-5 rounded-lg w-full transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
             >
               Send Message
             </button>
