@@ -6,24 +6,21 @@ export async function POST(req) {
   try {
     const { name, email, message } = await req.json();
 
-    // Configuração do transporte com o Gmail
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: fromEmail, // Seu e-mail do Gmail
-        pass: process.env.EMAIL_PASS, // Sua senha do Gmail ou senha de app
+        user: fromEmail,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Configurações do e-mail
     const mailOptions = {
-      from: email, // e-mail do remetente
-      to: [fromEmail, email], // e-mail para onde será enviado
-      subject: `Message from ${name}`, // Assunto do e-mail
-      text: message, // Corpo do e-mail
+      from: email,
+      to: [fromEmail, email],
+      subject: `Message from ${name}`,
+      text: message,
     };
 
-    // Envia o e-mail
     await transporter.sendMail(mailOptions);
 
     return new Response("Email sent successfully!", { status: 200 });
