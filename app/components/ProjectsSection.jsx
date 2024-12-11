@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion"; // Ensure motion is imported for animation
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
-// Define projects data outside the component for better readability and maintenance
 const projectsData = [
   {
     id: 1,
