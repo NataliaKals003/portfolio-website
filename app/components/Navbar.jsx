@@ -54,7 +54,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             rel="noopener noreferrer"
             className="text-black dark:text-white transition"
           >
-            <AiFillGithub size={35} />
+            <AiFillGithub size={40} />
           </a>
 
           <a
@@ -63,17 +63,17 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             rel="noopener noreferrer"
             className="text-black dark:text-white transition"
           >
-            <AiFillLinkedin size={35} />
+            <AiFillLinkedin size={40} />
           </a>
 
           <button
             onClick={toggleDarkMode}
-            className="w-9 h-9 flex items-center justify-center text-gray-800 dark:text-gray-200 bg-gray-200 rounded-lg dark:bg-gray-600 hover:ring-2 ring-gray-300 transition-all"
+            className="w-10 h-10 flex items-center justify-center text-gray-800 dark:text-gray-200 bg-gray-200 rounded-lg dark:bg-gray-600 hover:ring-2 ring-gray-300 transition-all"
           >
             {isDarkMode ? (
-              <SunIcon className="h-5 w-5" />
+              <SunIcon className="h-8 w-8" />
             ) : (
-              <MoonIcon className="h-5 w-5" />
+              <MoonIcon className="h-8 w-8" />
             )}
           </button>
         </div>
