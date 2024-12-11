@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 
 const EmailSection = () => {
@@ -7,7 +6,6 @@ const EmailSection = () => {
     email: "",
     message: "",
   });
-
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -96,9 +94,9 @@ const EmailSection = () => {
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="text-white block text-sm mb-2 font-normal"
+                className="text-white block mb-2 text-sm font-normal"
               >
-                Message
+                Your Message
               </label>
               <textarea
                 name="message"
@@ -113,7 +111,7 @@ const EmailSection = () => {
             </div>
             <button
               type="submit"
-              className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500  text-white font-normal py-2.5 px-5 rounded-lg w-full transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
             >
               Send Message
             </button>
