@@ -7,6 +7,7 @@ const EmailSection = () => {
     email: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
