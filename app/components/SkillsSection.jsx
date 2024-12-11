@@ -11,6 +11,7 @@ const SkillsSection = () => {
     { name: "NodeJS", img: "/images/node.jpg" },
     // { name: "Firebase", img: "/images/firebase.jpg" },
     { name: "React", img: "/images/react.jpg" },
+    { name: "Git", img: "/images/git.jpg" },
   ];
 
   const [hasScrolled, setHasScrolled] = useState(false);

@@ -8,7 +8,7 @@ const projectsData = [
     id: 1,
     title: "Focus Timer",
     description:
-      "A timer developed in JavaScript with dark/light mode and background music.",
+      "A timer developed in JavaScript, HTML and CSS with background music.",
     image: "/images/projects/focusTimer.png",
     gitUrl: "https://github.com/NataliaKals003/FocusTimer-2.0",
     previewUrl: "https://focus-timer-gray.vercel.app/",

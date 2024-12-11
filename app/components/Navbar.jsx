@@ -16,8 +16,12 @@ const navLinks = [
 const Navbar = ({ isDarkMode, toggleDarkMode }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setNavbarOpen(false);
+  };
+
   return (
-    <nav className="items-center justify-between p-7 top-0 left-0 right-0 z-10 bg-white dark:bg-[#0a0a0a] bg-opacity-100">
+    <nav className="fixed top-0 left-0 right-0 z-20 bg-white dark:bg-[#121212] bg-opacity-95 shadow-md backdrop-blur-md transition-all duration-300">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
@@ -41,7 +45,11 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 ">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <NavLink href={link.path} title={link.title} />
+                <NavLink
+                  href={link.path}
+                  title={link.title}
+                  onClick={handleLinkClick}
+                />
               </li>
             ))}
           </ul>
@@ -54,7 +62,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             rel="noopener noreferrer"
             className="text-black dark:text-white transition"
           >
-            <AiFillGithub size={40} />
+            <AiFillGithub size={35} />
           </a>
 
           <a
@@ -63,17 +71,17 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             rel="noopener noreferrer"
             className="text-black dark:text-white transition"
           >
-            <AiFillLinkedin size={40} />
+            <AiFillLinkedin size={35} />
           </a>
 
           <button
             onClick={toggleDarkMode}
-            className="w-10 h-10 flex items-center justify-center text-gray-800 dark:text-gray-200 bg-gray-200 rounded-lg dark:bg-gray-600 hover:ring-2 ring-gray-300 transition-all"
+            className="w-9 h-9 flex items-center justify-center text-gray-800 dark:text-gray-200 bg-gray-200 rounded-lg dark:bg-gray-600 hover:ring-2 ring-gray-300 transition-all"
           >
             {isDarkMode ? (
-              <SunIcon className="h-8 w-8" />
+              <SunIcon className="h-7 w-7" />
             ) : (
-              <MoonIcon className="h-8 w-8" />
+              <MoonIcon className="h-7 w-7" />
             )}
           </button>
         </div>

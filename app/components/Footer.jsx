@@ -2,9 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer border z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white">
-      <div className="container p-12 flex justify-between">
-        <p className="text-gray-600 dark:text-gray-200">All rights reserved.</p>
+    <footer className="footer border-t-[#33353F] border-t border-l-0 border-r-0 border-b-0">
+      <div className="container p-3 flex justify-between">
+        <p className="text-gray-900 dark:text-gray-200">
+          © 2024 - All rights reserved
+        </p>
       </div>
     </footer>
   );

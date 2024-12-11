@@ -7,6 +7,7 @@ const EmailSection = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false); // Adicionando estado de loading
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,6 +16,7 @@ const EmailSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Ativando loading ao submeter o formulário
     try {
       const response = await fetch("/api/send", {
         method: "POST",
@@ -30,6 +32,8 @@ const EmailSection = () => {
     } catch (error) {
       console.error("Error sending email:", error);
       alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false); // Desativando o loading ao terminar
     }
   };
 
@@ -67,7 +71,7 @@ const EmailSection = () => {
                 type="text"
                 id="name"
                 required
-                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-white text-gray-900 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Jacob"
                 value={formData.name}
                 onChange={handleChange}
@@ -85,7 +89,7 @@ const EmailSection = () => {
                 type="email"
                 id="email"
                 required
-                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-white text-gray-900 text-sm rounded-lg block w-full p-2.5"
                 placeholder="jacob@google.com"
                 value={formData.email}
                 onChange={handleChange}
@@ -101,7 +105,7 @@ const EmailSection = () => {
               <textarea
                 name="message"
                 id="message"
-                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                className="dark:bg-[#18191E] border border-[#33353F] placeholder-[#838383] dark:placeholder-[#9CA2A9] dark:text-white text-gray-900 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Let's talk about..."
                 rows="4"
                 value={formData.message}
@@ -111,9 +115,13 @@ const EmailSection = () => {
             </div>
             <button
               type="submit"
-              className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500  text-white font-normal py-2.5 px-5 rounded-lg w-full transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+              disabled={loading} // Desabilita o botão enquanto estiver enviando
+              className={`bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white font-normal py-2.5 px-5 rounded-lg w-full transform transition-transform duration-300 hover:scale-105 hover:shadow-xl ${
+                loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}{" "}
+              {/* Exibe "Sending..." durante o carregamento */}
             </button>
           </form>
         )}
