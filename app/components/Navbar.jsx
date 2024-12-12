@@ -2,7 +2,7 @@
 import NavLink from "./NavLink";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MenuOverlay from "./MenuOverlay";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
@@ -16,9 +16,13 @@ const navLinks = [
 const Navbar = ({ isDarkMode, toggleDarkMode }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
-  const handleLinkClick = () => {
-    setNavbarOpen(false);
-  };
+  useEffect(() => {
+    const closeMenu = () => setNavbarOpen(false);
+    if (navbarOpen) {
+      document.body.addEventListener("click", closeMenu);
+    }
+    return () => document.body.removeEventListener("click", closeMenu);
+  }, [navbarOpen]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-20 bg-white dark:bg-[#121212] bg-opacity-95 shadow-md backdrop-blur-md transition-all duration-300">
@@ -48,7 +52,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                 <NavLink
                   href={link.path}
                   title={link.title}
-                  onClick={handleLinkClick}
+                  onClick={() => setNavbarOpen(false)}
                 />
               </li>
             ))}
