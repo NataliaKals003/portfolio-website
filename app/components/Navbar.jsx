@@ -1,7 +1,11 @@
 "use client";
 import NavLink from "./NavLink";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillMediumCircle,
+} from "react-icons/ai";
 import React, { useState, useEffect, useRef } from "react";
 import MenuOverlay from "./MenuOverlay";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -73,6 +77,15 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
         </div>
 
         <div className="flex items-center space-x-6">
+          <a
+            href="https://medium.com/@nataliakals03/exploring-software-engineering-my-journey-building-a-web-application-from-scratch-b81e56326cb9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black dark:text-white transition"
+          >
+            <AiFillMediumCircle size={35} />
+          </a>
+
           <a
             href="https://github.com/NataliaKals003"
             target="_blank"

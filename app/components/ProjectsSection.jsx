@@ -6,31 +6,37 @@ import ProjectCard from "./ProjectCard";
 const projectsData = [
   {
     id: 1,
-    title: "Focus Timer",
+    title: "TMS-CRM",
     description:
-      "A timer developed in JavaScript, HTML and CSS with background music.",
-    image: "/images/projects/focusTimer.png",
-    gitUrl: "https://github.com/NataliaKals003/FocusTimer-2.0",
-    previewUrl: "https://focus-timer-gray.vercel.app/",
+      "A CRM web application built from scratch and deployed to production. Used technologies like React, API Gateway, Lambda, Cognito, Infrastructure as Code, automated testing, CI/CD, and more.",
+    image: "/images/projects/tmsCRM.png",
+    gitUrl:
+      "https://medium.com/@nataliakals03/exploring-software-engineering-my-journey-building-a-web-application-from-scratch-b81e56326cb9",
   },
   {
     id: 2,
-    title: "Photography Blog",
-    description: "Developed with HTML and CSS for users to search images.",
-    image: "/images/projects/photography-blog.png",
-    gitUrl: "https://github.com/NataliaKals003/Photography-Blog",
+    title: "FoodExplorer",
+    description:
+      "A digital menu project developed with HTML, CSS, JavaScript, Node.js, and React.js.",
+    image: "/images/projects/foodExplorer.png",
+    gitUrl: {
+      frontend: "https://github.com/NataliaKals003/FoodExplorer.Frontend",
+      backend: "https://github.com/NataliaKals003/FoodExplorer.Backend",
+    },
   },
   {
     id: 3,
-    title: "Galaxies",
-    description: "List of galaxies project using HTML and CSS.",
-    image: "/images/projects/Galaxies.png",
-    gitUrl: "https://github.com/NataliaKals003/Galaxies",
-    previewUrl: "/",
+    title: "Movies",
+    description:
+      "A movie management app developed using ReactJS, Node.js, and SQL with Knex.js.",
+    image: "/images/projects/movies.png",
+    gitUrl: {
+      frontend: "https://github.com/NataliaKals003/Movies.Frontend",
+      backend: "https://github.com/NataliaKals003/Movies.Backend",
+    },
   },
-
   {
-    id: 5,
+    id: 4,
     title: "Notes",
     description:
       "A note management application with ReactJS, Node.js, and SQL using Knex.js.",
@@ -41,28 +47,27 @@ const projectsData = [
     },
   },
   {
+    id: 5,
+    title: "Galaxies",
+    description: "List of galaxies project using HTML and CSS.",
+    image: "/images/projects/Galaxies.png",
+    gitUrl: "https://github.com/NataliaKals003/Galaxies",
+  },
+  {
     id: 6,
-    title: "Movies",
+    title: "Focus Timer",
     description:
-      "A movie management app developed using ReactJS, Node.js, and SQL with Knex.js.",
-    image: "/images/projects/movies.png",
-    gitUrl: {
-      frontend: "https://github.com/NataliaKals003/Movies.Frontend",
-      backend: "https://github.com/NataliaKals003/Movies.Backend",
-    },
-    previewUrl: "https://rocketset-movies.netlify.app/",
+      "A timer developed in JavaScript, HTML and CSS with background music.",
+    image: "/images/projects/focusTimer.png",
+    gitUrl: "https://github.com/NataliaKals003/FocusTimer-2.0",
+    previewUrl: "https://focus-timer-gray.vercel.app/",
   },
   {
     id: 7,
-    title: "FoodExplorer",
-    description:
-      "A digital menu project developed with HTML, CSS, JavaScript, Node.js, and React.js.",
-    image: "/images/projects/foodExplorer.png",
-    gitUrl: {
-      frontend: "https://github.com/NataliaKals003/FoodExplorer.Frontend",
-      backend: "https://github.com/NataliaKals003/FoodExplorer.Backend",
-    },
-    previewUrl: "https://menu-foodexplorer.netlify.app/#/sign-up",
+    title: "Photography Blog",
+    description: "Developed with HTML and CSS for users to search images.",
+    image: "/images/projects/photography-blog.png",
+    gitUrl: "https://github.com/NataliaKals003/Photography-Blog",
   },
 ];
 

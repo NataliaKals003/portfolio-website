@@ -2,16 +2,12 @@ import React, { useEffect, useState } from "react";
 
 const SkillsSection = () => {
   const tags = [
-    { name: "JavaScript", img: "/images/js.jpg" },
-    { name: "HTML", img: "/images/html.jpg" },
-    { name: "CSS", img: "/images/css.jpg" },
     { name: "TypeScript", img: "/images/typescript.png" },
-    { name: "NextJS", img: "/images/nextjs.jpg" },
-    { name: "Tailwind", img: "/images/tailwind.jpg" },
-    { name: "NodeJS", img: "/images/node.jpg" },
-    // { name: "Firebase", img: "/images/firebase.jpg" },
     { name: "React", img: "/images/react.jpg" },
-    { name: "Git", img: "/images/git.jpg" },
+    { name: "AWS", img: "/images/aws.png" },
+    { name: "Vitest", img: "/images/vitest.png" },
+    { name: "LocalStack", img: "/images/localStack.png" },
+    { name: "NodeJS", img: "/images/node.jpg" },
   ];
 
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -34,7 +30,7 @@ const SkillsSection = () => {
     >
       <div className="pt-32 pb-10 sm:pt-32 sm:pb-16 sm:mt-6">
         <h3 className="uppercase tracking-[20px] text-black dark:text-white">
-          SKILLS
+          STACK
         </h3>
       </div>
 
