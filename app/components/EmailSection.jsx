@@ -7,8 +7,7 @@ const EmailSection = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false); // Adicionando estado de loading
-
+  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -16,7 +15,7 @@ const EmailSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Ativando loading ao submeter o formulário
+    setLoading(true);
     try {
       const response = await fetch("/api/send", {
         method: "POST",
@@ -33,7 +32,7 @@ const EmailSection = () => {
       console.error("Error sending email:", error);
       alert("An error occurred. Please try again.");
     } finally {
-      setLoading(false); // Desativando o loading ao terminar
+      setLoading(false);
     }
   };
 
@@ -115,13 +114,12 @@ const EmailSection = () => {
             </div>
             <button
               type="submit"
-              disabled={loading} // Desabilita o botão enquanto estiver enviando
+              disabled={loading} 
               className={`bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white font-normal py-2.5 px-5 rounded-lg w-full transform transition-transform duration-300 hover:scale-105 hover:shadow-xl ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >
               {loading ? "Sending..." : "Send Message"}{" "}
-              {/* Exibe "Sending..." durante o carregamento */}
             </button>
           </form>
         )}

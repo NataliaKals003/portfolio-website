@@ -68,7 +68,6 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                 <NavLink
                   href={link.path}
                   title={link.title}
-                  // Fechar o menu apenas em telas pequenas
                   onClick={navbarOpen ? () => setNavbarOpen(false) : null}
                 />
               </li>
